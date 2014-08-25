@@ -21,28 +21,3 @@ Installing and Running Solution
 ```
 
 2. Take a look in the ./out folder, your files should be there along with the moonhighway home page
-
-
-Testing
--------
-1. Install local Node packages
-
-```
-    $ npm install
-```
-
-2. Install mocha globally
-
-```
-    $ sudo npm install -g mocha
-```
-
-3. Run the tests
-
-```
-    $ mocha
-```
-
-Documentation
--------------
-Documentation can be found at [./docs/index.html](docs/index.html).
