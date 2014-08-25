@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>YUI Building Blocks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.5/css/reveal.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.5/css/theme/night.css" id="theme">
+        <!-- For syntax highlighting of code. -->
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.5/lib/css/zenburn.css">
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides">
+
+<!-- A section contained within the .reveal > .slides container is a single slide. -->
+<section>
+    <h2>YUI Building Blocks</h2>
+    <ul>
+        <li>Instructor: Jeremy Osborne</li>
+        <li>Email: jeremywosborne@gmail.com</li>
+        <li>Phone: 408-655-3155</li>
+    </ul>
+    <br/>
+    <br/>
+    <p>
+    Please download the following:
+    </p>
+    <p style="word-wrap: break-word; word-break: break-all;">
+        <a href="https://db.tt/0ZHiWsx1">https://db.tt/0ZHiWsx1</a>
+    </p>
+    <br/>
+    <br/>
+    <p><small>Please note that this session may be recorded.</small></p>
+</section>
+
+                <section data-markdown>
+                    <script type="text/template">
+## Logistics
+* This is a 2 session, virtual course.
+* Each session is 2 hours long.
+* Questions are welcome at anytime.
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+## Setting Expectations
+* We assume you are an engineer who is relatively new to JavaScript in general or relatively new to YUI.
+* The material assumes prior understanding of HTML, CSS, and JavaScript.
+* The material focuses on the application-centric modules of YUI.
+* The main part of the class will be code walkthroughs.
+* There will be exercises and Q&amp;A sessions throughout.
+                    </script>
+                </section>
+
+<section>
+    <h2>Agenda of topics</h2>
+    <ul>
+        <li>When and why you might want to use the application infrastructure.</li>
+        <li>Modules</li>
+        <li>EventTarget, EventFacade and custom events</li>
+        <li>extending, augmenting, mixing</li>
+        <li>Attribute</li>
+        <li>Base</li>
+        <li>Widget</li>
+        <li>MV* preview</li>
+    </ul>
+</section>
+
+            </div>
+        </div>
+
+        <!-- Below is the control code for Reveal. -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.5/lib/js/head.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.3/js/reveal.min.js"></script>
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.5/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.5/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.5/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.5/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.5/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.5/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+    </body>
+</html>
