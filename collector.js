@@ -3,24 +3,6 @@ var http = require('http'),
     fs = require('fs');
 
 /**
- * The Source directory or url
- * @for Collector
- * @property source
- * @default 'http://www.moonhighway.com/'
- * @type {String}
- */
-var source = getARGV(process.argv, 's') || './sampleSource';
-
-/**
- * The destination directory
- * @for Collector
- * @property destination
- * @default './out'
- * @type {String}
- */
-var destination = getARGV(process.argv, 'd') || './out';
-
-/**
  * Selects the argv value based on a key
  * @example
  *
@@ -40,6 +22,24 @@ function getARGV(argv, key) {
     var i = argv.indexOf('-' + key) + 1;
     return (i) ? argv[i] : false;
 }
+
+/**
+ * The Source directory or url
+ * @for Collector
+ * @property source
+ * @default 'http://www.moonhighway.com/'
+ * @type {String}
+ */
+var source = getARGV(process.argv, 's');
+
+/**
+ * The destination directory
+ * @for Collector
+ * @property destination
+ * @default './out'
+ * @type {String}
+ */
+var destination = getARGV(process.argv, 'd');
 
 /**
  * Makes a web request and sends the results to a callback function
@@ -105,13 +105,13 @@ function makeRequest(url, cb) {
  * @param cb
  * @constructor
  */
-function Collector(source, target, cb) {
+function collector(source, target, cb) {
 
     if (!fs.existsSync(__dirname + target.replace('.', ''))) {
         fs.mkdirSync(target);
     }
 
-    if (source.indexOf('http://') != -1) {
+    if (source.indexOf('http://') !== -1) {
 
         makeRequest(source, function (html) {
 
@@ -135,7 +135,7 @@ function Collector(source, target, cb) {
 
                 fs.writeFileSync(path.normalize(__dirname + '/' + target + '/' + file), data);
 
-                if (i == files.length - 1) {
+                if (i === files.length - 1) {
                     cb();
                 }
 
@@ -143,20 +143,25 @@ function Collector(source, target, cb) {
 
         });
     }
-};
+}
 
 
 /**
  * A node js module that collects files from folders and urls
  * @module Collector
  */
-exports.getARGV = getARGV;
-exports.makeRequest = makeRequest;
-exports.Collector = Collector;
+module.exports.getARGV = getARGV;
+module.exports.makeRequest = makeRequest;
+module.exports.collector = collector;
 
-
-Collector(source, destination, function () {
-    console.log("Finished Collecting and Dumping");
-});
+if (!module.parent) {
+    if (!source || !destination) {
+        console.log("Both source (-s) and destination are required (-d)");
+    } else {
+        collector(source, destination, function () {
+            console.log("Finished Collecting and Dumping");
+        });
+    }
+}
 
 
