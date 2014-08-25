@@ -1,6 +1,6 @@
 {
   "name": "collector-tool",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A tool that copies files from one folder to another, or saves the contents of a webpage to a folder.  This is a tutorial for learning node js",
   "main": "collector.js",
   "scripts": {
