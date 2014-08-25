@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var http = require('http'),
     path = require('path'),
     fs = require('fs');
@@ -46,8 +47,8 @@ var destination = getARGV(process.argv, 'd');
  * @example
  *
  *       collector.makeRequest('http://www.moonhighway.com', function (html) {
-*             html;       // The HTML form http://www.moonhighway.com
-*       });
+ *             html;       // The HTML form http://www.moonhighway.com
+ *       });
  *
  * @for Collector
  * @method makeRequest
@@ -58,7 +59,7 @@ function makeRequest(url, cb) {
 
     url = url.replace('http://', '').replace('https//', '');
 
-    opts = {
+    var opts = {
         hostname: url,
         port: 80,
         path: '',

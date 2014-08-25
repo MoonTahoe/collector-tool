@@ -6,6 +6,9 @@
   "scripts": {
     "test": "grunt check; mocha -R list --recursive"
   },
+  "bin": {
+      "collector": "collector.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/MoonTahoe/collector-tool.git"
